@@ -1,12 +1,12 @@
 #pragma once
-#include "pch.h"
+
 #include "RuleSet.h"
 
-class ClassicRuleSet : public Ruleset
+class RuleSet3 : public Ruleset
 {
 public:
-	ClassicRuleSet();
-	~ClassicRuleSet();
+	RuleSet3();
+	~RuleSet3();
 	std::vector<int> applyRule(std::vector<int> grid, int size) override;
 
 };

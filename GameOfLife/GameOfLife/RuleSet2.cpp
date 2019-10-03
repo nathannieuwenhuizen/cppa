@@ -1,21 +1,19 @@
 #include "pch.h"
-#include "AltRuleSet.h"
-#include "Grid.h"
+#include "RuleSet2.h"
 
-
-AltRuleSet::AltRuleSet(Grid _grid) : grid(_grid)
+RuleSet2::RuleSet2()
 {
 }
 
 
-AltRuleSet::~AltRuleSet()
+RuleSet2::~RuleSet2()
 {
 }
-std::vector<int> AltRuleSet::applyRule() {
-	std::vector<int> newGrid = grid.cells;
+std::vector<int> RuleSet2::applyRule(std::vector<int>  grid, int size) {
+	std::vector<int> newGrid = grid;
 	for (std::vector<int>::iterator it = newGrid.begin(); it != newGrid.end(); ++it) {
 		int index = it - newGrid.begin();
-		int amountOfLiving = grid.amountOfLivingNeighbours(index);
+		int amountOfLiving = Ruleset::amountOfLivingNeighbours(grid, size, index);
 
 		if (*it == 0) {
 			if (amountOfLiving == 2) {
@@ -33,6 +31,5 @@ std::vector<int> AltRuleSet::applyRule() {
 		}
 
 	}
-	grid.cells = newGrid;
 	return newGrid;
 }

@@ -2,11 +2,12 @@
 #include "pch.h"
 #include "RuleSet.h"
 
-class ClassicRuleSet : public Ruleset
+
+class RuleSet2 : public Ruleset
 {
 public:
-	ClassicRuleSet();
-	~ClassicRuleSet();
+	RuleSet2();
+	~RuleSet2();
 	std::vector<int> applyRule(std::vector<int> grid, int size) override;
 
 };

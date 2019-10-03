@@ -13,6 +13,12 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\rulesets">
+      <UniqueIdentifier>{906c7ff0-3b3c-4f43-8a16-122044158399}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\rulesets">
+      <UniqueIdentifier>{45572060-4f58-4220-b0ed-df9292bbd445}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -21,14 +27,17 @@
     <ClInclude Include="Grid.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Ruleset.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="ClassicRuleSet.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\rulesets</Filter>
     </ClInclude>
-    <ClInclude Include="AltRuleSet.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="RuleSet2.h">
+      <Filter>Header Files\rulesets</Filter>
     </ClInclude>
-    <ClInclude Include="SecondAltRule.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="RuleSet3.h">
+      <Filter>Header Files\rulesets</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -41,14 +50,17 @@
     <ClCompile Include="Grid.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Ruleset.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="ClassicRuleSet.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\rulesets</Filter>
     </ClCompile>
-    <ClCompile Include="AltRuleSet.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="RuleSet2.cpp">
+      <Filter>Source Files\rulesets</Filter>
     </ClCompile>
-    <ClCompile Include="SecondAltRule.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="RuleSet3.cpp">
+      <Filter>Source Files\rulesets</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

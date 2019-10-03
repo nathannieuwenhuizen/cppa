@@ -4,7 +4,7 @@
 #include <stdlib.h>     /* srand, rand */
 #include <time.h>       /* time */
 
-Grid::Grid(int _size) : size(_size)
+Grid::Grid(int _size, Ruleset* ruleset) : size(_size), ruleset(ruleset)
 {
 	srand(time(NULL));
 
@@ -39,61 +39,12 @@ void Grid::draw() {
 		else {
 			std::cout << "*";
 		}
-		
-
-		//std::cout << ' ' << *it << " hallo " << index % size <<  std::endl;
 	}
 }
-
-int Grid::amountOfLivingNeighbours(int index) {
-
-	std::vector<int> neighbours = {};
-	int result = 0;
-	//isn't on top row
-	if (index > size) {
-		neighbours.push_back(cells[index - size]); //top
-		if (index % size > 1) {
-			neighbours.push_back(cells[index - (size - 1)]); //top left
-		}
-
-		if (index % size < size - 1) {
-			neighbours.push_back(cells[index - (size + 1)]); //top right
-		}
-
-	}
-
-	//isnt on bottom row
-	if (index < (size * size) - size -1) {
-		neighbours.push_back(cells[index + size]); //bottom
-		if (index % size > 1) {
-			neighbours.push_back(cells[index + (size - 1)]); //bottom left
-		}
-
-		if (index % size < size - 1) {
-			neighbours.push_back(cells[index + (size + 1)]); //bottom right
-		}
-
-	}
-	if (index % size > 1) {
-		neighbours.push_back(cells[index - 1]); //left
-	}
-
-	if (index % size < size - 1) {
-		neighbours.push_back(cells[index + 1]); //right
-	}
-
-
-	for (std::vector<int>::iterator it = neighbours.begin(); it != neighbours.end(); ++it) {
-		if (*it == 1) {
-			result++;
-		}
-		//std::cout << ' ' << *it << " hallo " << index % size <<  std::endl;
-	}
-
-	return result;
-}
-
 
 Grid::~Grid()
 {
+}
+void Grid::iteration() {
+	cells = ruleset->applyRule(cells, size);
 }

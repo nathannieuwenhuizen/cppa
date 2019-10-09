@@ -4,6 +4,13 @@
 #include "pch.h"
 #include <iostream>
 #include "Parent.h"
+Parent makeParent(Parent parent) {
+	std::cout << "begin making a parent: " << std::endl;
+	Parent newParent = parent;
+	std::cout << "end making a parent: " << std::endl;
+
+	return newParent;
+}
 
 int main() {
 
@@ -27,9 +34,13 @@ int main() {
 	p3->child = nullptr;
 	std::cout << " child count: " << *p1 << " | " << *p2 << " | " << *p3 << std::endl;
 
+
 	//delete p1;
-	//delete p2;
-	//delete p3;
+//delete p2;
+//delete p3;
+
+	//---------------------move constructor
+	Parent p4 = makeParent(Parent("Parent4"));
 
 	return 0;
 }

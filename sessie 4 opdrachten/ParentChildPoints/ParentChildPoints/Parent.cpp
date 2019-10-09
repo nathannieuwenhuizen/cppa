@@ -34,6 +34,18 @@ Parent& Parent::operator=(const Parent& other) {
 	return *this;
 }
 
+Parent::Parent(Parent && other) noexcept
+{
+	std::cout << "Move constructor from parent '" << other.name << "' @" << &other << " to parent @" << this << std::endl;
+	name = std::move(other.name);
+	child = std::move(other.child);
+
+	// 'reset' 't originele object
+	other.name = "(nodata: has been moved)";
+	other.child = nullptr;
+
+}
+
 std::ostream& operator<<(std::ostream& os, const Parent& parent) {
 	os << "parent name: " << parent.name;
 	if (parent.child) {

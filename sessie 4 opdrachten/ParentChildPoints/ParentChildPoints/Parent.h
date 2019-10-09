@@ -13,6 +13,7 @@ public:
 
 	friend std::ostream& operator<<(std::ostream& os, const Parent& parent);
 	std::unique_ptr<Child> child;
+	Parent(Parent&& other) noexcept; // move-constructor
 
 private:
 	std::string name;
